@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">GGShop</string>
+
+
+    <string-array name="tittle">
+        <item>The Last Of Us Part II</item>
+        <item>Red Dead Redemption 2</item>
+        <item>Forza Horizon 4</item>
+        <item>Cyberpunk 2077</item>
+        <item>SpiderMan</item>
+        <item>The Last Of Us Remake</item>
+        <item>Death Stranding</item>
+    </string-array>
+
+    <string-array name="price">
+        <item>$20</item>
+        <item>$20</item>
+        <item>$20</item>
+        <item>$20</item>
+        <item>$20</item>
+        <item>$20</item>
+        <item>$20</item>
+    </string-array>
+
+    <integer-array name="phto">
+        <item>@drawable/tlou2</item>
+        <item>@drawable/rdr2</item>
+        <item>@drawable/fh4</item>
+        <item>@drawable/cyber</item>
+        <item>@drawable/spiderman</item>
+        <item>@drawable/tlou1</item>
+        <item>@drawable/death</item>
+    </integer-array>
+</resources>
