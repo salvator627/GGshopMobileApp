@@ -8,6 +8,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter(private val list: ArrayList<Game>): RecyclerView.Adapter<Adapter.ViewHolder>() {
+
+    private var OnItemClickListener : onItemClickListener? = null
+
+    fun setOnItemClickListener(onItemClickListener: onItemClickListener){
+        this.OnItemClickListener = onItemClickListener
+    }
+
+
    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
        fun bind(game: Game){
            with(itemView){
@@ -18,6 +26,10 @@ class Adapter(private val list: ArrayList<Game>): RecyclerView.Adapter<Adapter.V
                tittle.text = game.tittle
                price.text = game.price
                img.setImageResource(game.image)
+
+               itemView.setOnClickListener {
+                   OnItemClickListener?.onItemClick(game)
+               }
            }
        }
     }
@@ -32,4 +44,9 @@ class Adapter(private val list: ArrayList<Game>): RecyclerView.Adapter<Adapter.V
     }
 
     override fun getItemCount(): Int = list.size
+
+
+    interface onItemClickListener{
+        fun onItemClick(data:Game)
+    }
 }

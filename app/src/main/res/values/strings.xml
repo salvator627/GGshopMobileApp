@@ -10,9 +10,11 @@
         <item>SpiderMan</item>
         <item>The Last Of Us Remake</item>
         <item>Death Stranding</item>
+        <item>Mortal Kombat 11</item>
     </string-array>
 
     <string-array name="price">
+        <item>$20</item>
         <item>$20</item>
         <item>$20</item>
         <item>$20</item>
@@ -30,5 +32,6 @@
         <item>@drawable/spiderman</item>
         <item>@drawable/tlou1</item>
         <item>@drawable/death</item>
+        <item>@drawable/mk11</item>
     </integer-array>
 </resources>

@@ -1,10 +1,13 @@
 package com.example.ggshop
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ggshop.GameDetail.Companion.EXTRA_GAME
 import com.example.ggshop.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,8 +28,21 @@ class MainActivity : AppCompatActivity() {
         binding.rvGame.adapter = adapter
 
 
-    }
+        adapter.setOnItemClickListener(object : Adapter.onItemClickListener{
+            override fun onItemClick(data: Game) {
+                val gameparcel = Game(
+                    data.tittle,
+                    data.price,
+                    data.image
+                )
+                val intent = Intent(this@MainActivity, GameDetail::class.java)
+                intent.putExtra(EXTRA_GAME,gameparcel)
+                startActivity(intent)
+            }
 
+        })
+    }
+    @SuppressLint("Recycle")
     private fun getlistgame(): ArrayList<Game>{
         val tittle = resources.getStringArray(R.array.tittle)
         val price = resources.getStringArray(R.array.price)
